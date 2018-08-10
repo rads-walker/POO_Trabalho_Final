@@ -27,9 +27,9 @@ public class turmaDAO {
         
         try {
             stmt = con.prepareStatement("INSERT INTO turma (idTurma, nome) VALUES (?,?)");
-            stmt.setInt(1, t.getId());
-            stmt.setString(2, t.getNome());
-            System.out.println(stmt);
+            //stmt.setInt(1, t.getId());
+            //stmt.setString(2, t.getNome());
+            //System.out.println(stmt);
             stmt.executeUpdate();
             
             JOptionPane.showMessageDialog(null, "Salvo com successo!");
@@ -53,9 +53,9 @@ public class turmaDAO {
             rs = stmt.executeQuery();
             
             while(rs.next()){
-                Turma turma = new Turma();
-                turma.setId(rs.getInt("idTurma"));
-                turma.setNome(rs.getString("nome"));
+               // Turma turma = new Turma();
+                //turma.setId(rs.getInt("idTurma"));
+                //turma.setNome(rs.getString("nome"));
                 turmas.add(turma);
             }
             
