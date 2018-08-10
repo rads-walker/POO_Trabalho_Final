@@ -40,6 +40,11 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         login.setText("Login");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Usuario:");
 
@@ -126,6 +131,15 @@ public class Login extends javax.swing.JFrame {
     private void campo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_usuarioActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+         t = new Turma();
+        turmaDAO dao = new turmaDAO();
+        
+        t.setId(Integer.parseInt(txtId.getText()));
+        t.setNome(txtNome.getText());
+    }//GEN-LAST:event_loginActionPerformed
 
     /**
      * @param args the command line arguments
