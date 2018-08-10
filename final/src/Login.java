@@ -1,3 +1,6 @@
+
+import dao.recepcionistaDAO;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -119,8 +122,7 @@ public class Login extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-         t = new Turma();
-        turmaDAO dao = new turmaDAO();
+        recepcionistaDAO dao = recepcionistaDAO();
         
         t.setId(Integer.parseInt(txtId.getText()));
         t.setNome(txtNome.getText());
