@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class conecao {
     
     private static final String DRIVER = "com.msql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://localhost/mydb";
+    private static final String URL = "jdbc:mysql://localhost/tenis";
     private static final String USER = "root";
     private static final String PASS = "1234";
             

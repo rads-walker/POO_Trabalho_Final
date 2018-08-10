@@ -13,7 +13,7 @@ public class Pessoa extends Endereco{
     private Integer cpf;
     private String nome;
     private Endereco endereco;
-    private Integer telefone;
+    private String telefone;
     private String email;
     private Integer endereco_id;
 
@@ -49,11 +49,11 @@ public class Pessoa extends Endereco{
         this.endereco = endereco;
     }
 
-    public Integer getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(Integer telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

@@ -26,9 +26,10 @@ public class alunoDAO {
         ResultSet rs =  null;
         
         List alunos = new ArrayList<>();
+        //Aluno aluno = new Aluno();
         
         try {
-            stmt = con.prepareStatement("select * from aluno where Turma_idTurma = ?");
+            stmt = con.prepareStatement("select * from aluno where nome = ?");
             stmt.setInt(1, Busca);
             rs = stmt.executeQuery();
             
@@ -36,7 +37,10 @@ public class alunoDAO {
                 Aluno aluno = new Aluno();              
                 aluno.setNome(rs.getString("nome"));
                 aluno.setMatricula(rs.getInt("matricula"));
-                aluno.setIdade(rs.getInt("idade"));
+                aluno.setCpf(rs.getInt("idade"));
+                aluno.setTelefone(rs.getString("idade"));
+                aluno.setEmail(rs.getString("idade"));
+                aluno.setEndereco_id(rs.getInt("idade"));
                 alunos.add(aluno);
             }
             
