@@ -1,5 +1,6 @@
 
 import dao.recepcionistaDAO;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -137,10 +138,14 @@ public class Login extends javax.swing.JFrame {
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
-        recepcionistaDAO dao = recepcionistaDAO();
-        
-        t.setId(Integer.parseInt(txtId.getText()));
-        t.setNome(txtNome.getText());
+        recepcionistaDAO dao = new recepcionistaDAO();
+           
+       if(dao.checkLogin(campo_usuario.getText(), campo_senha1.getText())){
+           new Opcao().setVisible(true);
+           this.dispose();
+       }else{
+           JOptionPane.showMessageDialog(null, "Credenciais incorretas!");
+       }
     }//GEN-LAST:event_loginActionPerformed
 
     /**

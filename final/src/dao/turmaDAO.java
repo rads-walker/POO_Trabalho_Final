@@ -56,7 +56,7 @@ public class turmaDAO {
                // Turma turma = new Turma();
                 //turma.setId(rs.getInt("idTurma"));
                 //turma.setNome(rs.getString("nome"));
-                turmas.add(turma);
+                //turmas.add(turma);
             }
             
         } catch (SQLException ex) {

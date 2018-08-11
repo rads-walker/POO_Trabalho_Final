@@ -26,7 +26,7 @@ public class recepcionistaDAO {
 
         try {
 
-            stmt = con.prepareStatement("SELECT * FROM usuario WHERE login = ? and senha = ?");
+            stmt = con.prepareStatement("SELECT * FROM recepcionista WHERE usuario = ? and senha = ?");
             stmt.setString(1, login);
             stmt.setString(2, senha);
 
