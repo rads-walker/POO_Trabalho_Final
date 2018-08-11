@@ -87,6 +87,7 @@ public class professorDAO {
             stmt.setString(4, t.getTelefone());
             stmt.setString(5, t.getEmail());
             stmt.setInt(6, t.getEndereco_id());
+            
             System.out.println(stmt);
             stmt.executeUpdate();
             

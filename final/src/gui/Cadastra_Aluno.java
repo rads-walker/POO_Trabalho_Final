@@ -56,7 +56,7 @@ public class Cadastra_Aluno extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Alunos");
 
         jLabel1.setText("Nome:");

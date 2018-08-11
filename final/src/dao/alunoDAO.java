@@ -29,7 +29,7 @@ public class alunoDAO {
             stmt = con.prepareStatement("INSERT INTO aluno (nome, cpf, telefone, responsavel_cpf, turma_idturma, endereco_id, email) VALUES (?,?,?,?,?,?,?)");
             stmt.setString(1, t.getNome());
             stmt.setInt(2, t.getCpf());
-            stmt.setString(3, t.getTelefone());
+            stmt.setInt(3, t.getTelefone());
             stmt.setInt(4, t.getResponsavel_cpf());
             stmt.setInt(5, t.getEndereco_id());
             stmt.setInt(6, t.getTurma_idturma());
