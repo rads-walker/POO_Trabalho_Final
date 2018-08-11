@@ -40,7 +40,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        Cadastrar_Professor = new javax.swing.JMenuItem();
+        Cadastro_Professor = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -91,13 +91,13 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7.setText("Responsavel");
         jMenu2.add(jMenuItem7);
 
-        Cadastrar_Professor.setText("Professor");
-        Cadastrar_Professor.addActionListener(new java.awt.event.ActionListener() {
+        Cadastro_Professor.setText("Professor");
+        Cadastro_Professor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cadastrar_ProfessorActionPerformed(evt);
+                Cadastro_ProfessorActionPerformed(evt);
             }
         });
-        jMenu2.add(Cadastrar_Professor);
+        jMenu2.add(Cadastro_Professor);
 
         jMenuBar1.add(jMenu2);
 
@@ -151,11 +151,11 @@ public class Menu extends javax.swing.JFrame {
         new InserirAluno().setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
-    private void Cadastrar_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_ProfessorActionPerformed
+    private void Cadastro_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_ProfessorActionPerformed
         // TODO add your handling code here:
         Cadastrar_Professor objeto = Cadastrar_Professor.getInstancia();
         objeto.setVisible(true);
-    }//GEN-LAST:event_Cadastrar_ProfessorActionPerformed
+    }//GEN-LAST:event_Cadastro_ProfessorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,7 +193,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Cadastrar_Professor;
+    private javax.swing.JMenuItem Cadastro_Professor;
     private javax.swing.JMenuItem Consultar_Aluno;
     private javax.swing.JMenuItem Consultar_Professor;
     private javax.swing.JMenu jMenu1;

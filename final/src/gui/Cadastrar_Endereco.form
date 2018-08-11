@@ -47,8 +47,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="cpf" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                           <Component id="Nome" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
-                          <Component id="tel" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
-                          <Component id="cpf_resp" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                          <Component id="numero" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
+                          <Component id="bairro" alignment="0" min="-2" pref="253" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -73,12 +73,12 @@
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="tel" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="numero" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cpf_resp" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="bairro" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -116,7 +116,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cadastrarMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="Nome">
@@ -135,9 +134,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cpf">
     </Component>
-    <Component class="javax.swing.JTextField" name="tel">
+    <Component class="javax.swing.JTextField" name="numero">
     </Component>
-    <Component class="javax.swing.JTextField" name="cpf_resp">
+    <Component class="javax.swing.JTextField" name="bairro">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

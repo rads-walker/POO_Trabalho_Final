@@ -111,7 +111,7 @@
                   <Component id="cadastrar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="Cancelar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

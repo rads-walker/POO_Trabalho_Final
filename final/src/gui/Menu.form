@@ -77,12 +77,12 @@
                 <Property name="text" type="java.lang.String" value="Responsavel"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="Cadastrar_Professor">
+            <MenuItem class="javax.swing.JMenuItem" name="Cadastro_Professor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Professor"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cadastrar_ProfessorActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Cadastro_ProfessorActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

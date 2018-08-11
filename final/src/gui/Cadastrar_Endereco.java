@@ -20,7 +20,6 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         initComponents();
     }
     private static final Cadastrar_Endereco INSTANCIA = new Cadastrar_Endereco();
-
     public static Cadastrar_Endereco getInstancia() {
         return INSTANCIA;
     }
@@ -41,8 +40,8 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         Nome = new javax.swing.JTextField();
         Cancelar = new javax.swing.JButton();
         cpf = new javax.swing.JTextField();
-        tel = new javax.swing.JTextField();
-        cpf_resp = new javax.swing.JTextField();
+        numero = new javax.swing.JTextField();
+        bairro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -59,11 +58,6 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         cadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cadastrarMouseClicked(evt);
-            }
-        });
-        cadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarActionPerformed(evt);
             }
         });
 
@@ -114,8 +108,8 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cpf_resp, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -133,11 +127,11 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tel, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cpf_resp, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bairro, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -151,21 +145,11 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
 
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         Endereco endereco = new Endereco();
-        endereco.setNome(Nome.getText());
-        aluno.setMatricula(Integer.parseInt(mat.getText()));
-        aluno.setTelefone(tel.getText());
-        aluno.setCpf(Integer.parseInt(cpf.getText()));
-        aluno.setEmail(email.getText());
-        aluno.setResponsavel_cpf(Integer.parseInt(cpf_resp.getText()));
-        aluno.setTurma_idturma(Integer.parseInt(turma.getText()));
-        aluno.setEndereco_id(Integer.parseInt(end.getText()));
-        alunoDAO ad = new alunoDAO();
-        ad.create(aluno);
+        endereco.setBairro(Nome.getText());
+        endereco.setNumero(.getText());
+        endereco.setRua(Nome.getText());
+
     }//GEN-LAST:event_cadastrarMouseClicked
-
-    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
-
-    }//GEN-LAST:event_cadastrarActionPerformed
 
     private void NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeActionPerformed
         // TODO add your handling code here:
@@ -218,14 +202,14 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cancelar;
     private javax.swing.JTextField Nome;
+    private javax.swing.JTextField bairro;
     private javax.swing.JButton cadastrar;
     private javax.swing.JTextField cpf;
-    private javax.swing.JTextField cpf_resp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField tel;
+    private javax.swing.JTextField numero;
     // End of variables declaration//GEN-END:variables
 }
