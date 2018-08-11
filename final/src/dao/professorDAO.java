@@ -81,10 +81,10 @@ public class professorDAO {
         
         try {
             stmt = con.prepareStatement("INSERT INTO professor (siap, cpf, nome, telefone, email, endereco_id) VALUES (?,?,?,?,?,?)");
-            stmt.setInt(1, t.getSiap());
+            stmt.setString(1, t.getSiap());
             stmt.setInt(2, t.getCpf());
             stmt.setString(3, t.getNome());
-            stmt.setString(4, t.getTelefone());
+            stmt.setInt(4, t.getTelefone());
             stmt.setString(5, t.getEmail());
             stmt.setInt(6, t.getEndereco_id());
             
