@@ -136,7 +136,7 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         Endereco endereco = new Endereco();
         endereco.setBairro(bairro.getText());
         endereco.setRua(rua.getText());
-        endereco.setNumero();
+        endereco.setNumero((Integer.parseInt(numero.getText());
         
         
         endereco.setNumero(ERROR);
