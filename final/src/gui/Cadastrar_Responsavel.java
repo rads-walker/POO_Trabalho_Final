@@ -17,10 +17,13 @@ public class Cadastrar_Responsavel extends javax.swing.JFrame {
     /**
      * Creates new form Cadastrar_Responsavel
      */
-    public Cadastrar_Responsavel() {
+    private Cadastrar_Responsavel() {
         initComponents();
     }
-
+    private static final Cadastrar_Responsavel INSTANCIA = new Cadastrar_Responsavel();
+    public static Cadastrar_Responsavel getInstancia() {
+        return INSTANCIA;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +47,8 @@ public class Cadastrar_Responsavel extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Responsavel");
 
         cadastrar.setText("Cadastrar");
         cadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -154,6 +158,7 @@ public class Cadastrar_Responsavel extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked

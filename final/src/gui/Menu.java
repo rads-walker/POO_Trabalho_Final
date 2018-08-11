@@ -39,7 +39,7 @@ public class Menu extends javax.swing.JFrame {
         Cadastro_Aluno = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         Cadastro_Endereco = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        Cadastro_Responsavel = new javax.swing.JMenuItem();
         Cadastro_Professor = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
@@ -93,8 +93,13 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu2.add(Cadastro_Endereco);
 
-        jMenuItem7.setText("Responsavel");
-        jMenu2.add(jMenuItem7);
+        Cadastro_Responsavel.setText("Responsavel");
+        Cadastro_Responsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastro_ResponsavelActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Cadastro_Responsavel);
 
         Cadastro_Professor.setText("Professor");
         Cadastro_Professor.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +173,12 @@ public class Menu extends javax.swing.JFrame {
         objeto.setVisible(true);
     }//GEN-LAST:event_Cadastro_EnderecoActionPerformed
 
+    private void Cadastro_ResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_ResponsavelActionPerformed
+        // TODO add your handling code here:
+        Cadastrar_Responsavel objeto = Cadastrar_Responsavel.getInstancia();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_Cadastro_ResponsavelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -207,6 +218,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem Cadastro_Aluno;
     private javax.swing.JMenuItem Cadastro_Endereco;
     private javax.swing.JMenuItem Cadastro_Professor;
+    private javax.swing.JMenuItem Cadastro_Responsavel;
     private javax.swing.JMenuItem Consultar_Aluno;
     private javax.swing.JMenuItem Consultar_Professor;
     private javax.swing.JMenu jMenu1;
@@ -215,7 +227,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
