@@ -31,15 +31,15 @@ public class professorDAO {
             stmt = con.prepareStatement("select horario,duracao,turma_idturma from professor,aula where professor.siap = aula.professor_siap and professor.nome like ?");
             stmt.setInt(1, Busca);
             rs = stmt.executeQuery();
-            professor.set
-        (rs.getString("nome"));
+            //professor.set
+        //(rs.getString("nome"));
         }
          catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao recuperar do banco!");
         }finally{
             conecao.closeConnection(con, stmt, rs);
         }
-        return alunos;
+       return null /*alunos*/;
     }
     
      public List<Professor> read(Integer Busca){
@@ -56,14 +56,14 @@ public class professorDAO {
             rs = stmt.executeQuery();
             
             while(rs.next()){
-                Aluno aluno = new Aluno();              
+                /*Aluno aluno = new Aluno();              
                 aluno.setNome(rs.getString("nome"));
                 aluno.setMatricula(rs.getInt("matricula"));
                 aluno.setCpf(rs.getInt("idade"));
                 aluno.setTelefone(rs.getString("idade"));
                 aluno.setEmail(rs.getString("idade"));
                 aluno.setEndereco_id(rs.getInt("idade"));
-                alunos.add(aluno);
+                alunos.add(aluno);*/
             }
             
         } catch (SQLException ex) {
