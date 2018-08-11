@@ -65,7 +65,7 @@ public class alunoDAO {
                 aluno.setNome(rs.getString("nome"));
                 aluno.setMatricula(rs.getInt("matricula"));
                 aluno.setCpf(rs.getInt("idade"));
-                aluno.setTelefone(rs.getString("idade"));
+                aluno.setTelefone(rs.getInt("idade"));
                 aluno.setEmail(rs.getString("idade"));
                 aluno.setEndereco_id(rs.getInt("idade"));
                 alunos.add(aluno);

@@ -160,7 +160,7 @@ public class Cadastrar_Responsavel extends javax.swing.JFrame {
 
         Responsavel r = new Responsavel();
         r.setNome(Nome.getText());
-        r.setTelefone(tel.getText());
+        r.setTelefone(Integer.parseInt(tel.getText()));
         r.setCpf(Integer.parseInt(cpf.getText()));
         r.setEmail(email.getText());
         r.setEndereco_id(Integer.parseInt(end.getText()));

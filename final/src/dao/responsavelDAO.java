@@ -30,7 +30,7 @@ public class responsavelDAO {
            
             stmt.setInt(1, t.getCpf());
             stmt.setString(2, t.getNome());
-            stmt.setString(3, t.getTelefone());
+            stmt.setInt(3, t.getTelefone());
             stmt.setString(4, t.getEmail());
             stmt.setInt(5, t.getEndereco_id());
             System.out.println(stmt);
@@ -63,7 +63,7 @@ public class responsavelDAO {
                 Responsavel responsavel = new Responsavel();              
                 responsavel.setNome(rs.getString("nome"));
                 responsavel.setCpf(rs.getInt("cpf"));
-                responsavel.setTelefone(rs.getString("telefone"));
+                responsavel.setTelefone(Integer.parseInt(rs.getString("telefone")));
                 responsavel.setEmail(rs.getString("email"));
                 responsavel.setEndereco_id(rs.getInt("endereco_id"));
                 responsaveis.add(responsavel);
