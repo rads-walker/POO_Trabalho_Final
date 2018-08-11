@@ -247,4 +247,28 @@ public class aulaDAO {
         return aulas;
     }
      
+    public void create(Aula t){
+        
+        Connection con = conecao.getConnection();
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement("INSERT INTO aula (codigosala, duracao, professor_siap, turma_idturma,horario) VALUES (?,?,?,?,?)");
+            stmt.setInt(1, t.getCodigosala());
+            stmt.setString(2, t.getDuracao());
+            stmt.setInt(3, t.getProfessor_siap());
+            stmt.setInt(4, t.getTurma_idturma());
+            stmt.setDate(5, (java.sql.Date) t.getHorario());
+
+            System.out.println(stmt);
+            stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Salvo com successo!");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar!");
+        }finally{
+            conecao.closeConnection(con, stmt);
+        }
+    }
 }
