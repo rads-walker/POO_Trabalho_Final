@@ -20,31 +20,21 @@ import Model.Professor;
  */
 public class professorDAO {
         
-    public List<Professor> buscaNome(Integer Busca){
+    public Professor buscaNome(Integer Busca){
         Connection con = conecao.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs =  null;
         
-        List alunos = new ArrayList<>();
-        //Aluno aluno = new Aluno();
+        Professor professor = new Professor();                      
         
         try {
             stmt = con.prepareStatement("select * from professor where nome = ?");
             stmt.setInt(1, Busca);
             rs = stmt.executeQuery();
-            
-            while(rs.next()){
-                Professor aluno = new Professor();              
-                aluno.setNome(rs.getString("nome"));
-                aluno.setMatricula(rs.getInt("matricula"));
-                aluno.setCpf(rs.getInt("idade"));
-                aluno.setTelefone(rs.getString("idade"));
-                aluno.setEmail(rs.getString("idade"));
-                aluno.setEndereco_id(rs.getInt("idade"));
-                alunos.add(aluno);
-            }
-            
-        } catch (SQLException ex) {
+            professor.set
+        (rs.getString("nome"));
+        }
+         catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao recuperar do banco!");
         }finally{
             conecao.closeConnection(con, stmt, rs);
