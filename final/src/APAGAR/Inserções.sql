@@ -13,3 +13,11 @@ ALTER TABLE aula ADD horario varchar(10);
 truncate table aula;
 INSERT INTO `tenis`.`aula` (`idaulas`, `codigosala`, `duracao`, `professor_siap`, `turma_idturma`, `horario`) VALUES ('0', '56', '2', '123', '0', 'tarde');
 INSERT INTO `tenis`.`aula` (`idaulas`, `codigosala`, `duracao`, `professor_siap`, `turma_idturma`, `horario`) VALUES ('1', '57', '5', '124', '1', 'manha');
+
+
+ALTER TABLE aula
+DROP COLUMN horario;
+ALTER TABLE aula
+ADD COLUMN horario date;
+UPDATE `tenis`.`aula` SET `horario`='2008-07-05' WHERE `idaulas`='0';
+UPDATE `tenis`.`aula` SET `horario`='2008-07-06' WHERE `idaulas`='1';

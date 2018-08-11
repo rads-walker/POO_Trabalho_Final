@@ -5,6 +5,8 @@
  */
 package dao;
 
+
+import Model.Aula;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,27 +14,28 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import Model.Professor;
+
 
 /**
  *
  * @author Danilo
  */
-public class professorDAO {
-        
-    public Professor buscaNome(Integer Busca){
+public class aulaDAO {
+    
+        public Aula buscaNome(Integer Busca){
         Connection con = conecao.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs =  null;
         
-        Professor professor = new Professor();                      
+        Aula aula = new Aula();
         
         try {
             stmt = con.prepareStatement("select horario,duracao,turma_idturma from professor,aula where professor.siap = aula.professor_siap and professor.nome like ?");
             stmt.setInt(1, Busca);
             rs = stmt.executeQuery();
-            professor.set
-        (rs.getString("nome"));
+            aula.setDuracao(rs.getNString("duracao"));
+            aula.setHorario(rs.getNString("horario"));
+            
         }
          catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao recuperar do banco!");
