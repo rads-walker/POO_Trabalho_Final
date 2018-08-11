@@ -146,7 +146,7 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         Endereco endereco = new Endereco();
         endereco.setBairro(Nome.getText());
-        endereco.setNumero(.getText());
+        
         endereco.setRua(Nome.getText());
 
     }//GEN-LAST:event_cadastrarMouseClicked

@@ -26,15 +26,15 @@ public class alunoDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO aluno (matricula, cpf, nome, telefone, email, endereco_id, responsavel_cpf, turma_idturma) VALUES (?,?,?,?,?,?,?,?)");
-            stmt.setInt(1, t.getMatricula());
+            stmt = con.prepareStatement("INSERT INTO aluno (nome, cpf, telefone, responsavel_cpf, turma_idturma, endereco_id, email) VALUES (?,?,?,?,?,?,?)");
+            stmt.setString(1, t.getNome());
             stmt.setInt(2, t.getCpf());
-            stmt.setString(3, t.getNome());
-            stmt.setString(4, t.getTelefone());
-            stmt.setString(5, t.getEmail());
-            stmt.setInt(6, t.getEndereco_id());
-            stmt.setInt(7, t.getResponsavel_cpf());
-            stmt.setInt(8, t.getTurma_idturma());
+            stmt.setString(3, t.getTelefone());
+            stmt.setInt(4, t.getResponsavel_cpf());
+            stmt.setInt(5, t.getEndereco_id());
+            stmt.setInt(6, t.getTurma_idturma());
+            stmt.setString(7, t.getEmail());
+
             System.out.println(stmt);
             stmt.executeUpdate();
             

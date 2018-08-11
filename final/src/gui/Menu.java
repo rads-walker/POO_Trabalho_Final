@@ -36,7 +36,7 @@ public class Menu extends javax.swing.JFrame {
         Consultar_Aluno = new javax.swing.JMenuItem();
         Consultar_Professor = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        Cadastro_Aluno = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -74,13 +74,13 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu2.setText("Cadastrar");
 
-        jMenuItem6.setText("Aluno");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+        Cadastro_Aluno.setText("Aluno");
+        Cadastro_Aluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
+                Cadastro_AlunoActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem6);
+        jMenu2.add(Cadastro_Aluno);
 
         jMenuItem8.setText("Aulas");
         jMenu2.add(jMenuItem8);
@@ -145,11 +145,11 @@ public class Menu extends javax.swing.JFrame {
         objeto.setVisible(true);
     }//GEN-LAST:event_Consultar_ProfessorActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void Cadastro_AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_AlunoActionPerformed
         // TODO add your handling code here:
-        
-        new InserirAluno().setVisible(true);
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+        Cadastra_Aluno objeto = Cadastra_Aluno.getInstancia();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_Cadastro_AlunoActionPerformed
 
     private void Cadastro_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastro_ProfessorActionPerformed
         // TODO add your handling code here:
@@ -193,6 +193,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Cadastro_Aluno;
     private javax.swing.JMenuItem Cadastro_Professor;
     private javax.swing.JMenuItem Consultar_Aluno;
     private javax.swing.JMenuItem Consultar_Professor;
@@ -203,7 +204,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JPopupMenu jPopupMenu1;
