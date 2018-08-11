@@ -17,7 +17,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,11 +33,15 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        Consultar_Aluno = new javax.swing.JMenuItem();
+        Consultar_Professor = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -49,44 +53,55 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jMenu1.setText("Consulta Aulas");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
-            }
-        });
 
-        jMenuItem3.setText("Aluno");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        Consultar_Aluno.setText("Aluno");
+        Consultar_Aluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                Consultar_AlunoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        jMenu1.add(Consultar_Aluno);
 
-        jMenuItem4.setText("Professor");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        Consultar_Professor.setText("Professor");
+        Consultar_Professor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                Consultar_ProfessorActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem4);
+        jMenu1.add(Consultar_Professor);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Cadastrar");
+
+        jMenuItem6.setText("Aluno");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem6);
+
+        jMenuItem8.setText("Aulas");
+        jMenu2.add(jMenuItem8);
+
+        jMenuItem5.setText("Endereço");
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem7.setText("Responsavel");
+        jMenu2.add(jMenuItem7);
+
+        jMenuItem9.setText("Professor");
+        jMenu2.add(jMenuItem9);
+
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("jMenu3");
+        jMenu3.setText("Sobre");
         jMenu3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu3ActionPerformed(evt);
             }
         });
-
-        jRadioButtonMenuItem2.setSelected(true);
-        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
-        jMenu3.add(jRadioButtonMenuItem2);
-
         jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
@@ -106,27 +121,30 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        // TODO add your handling code here:
-        new Consulta_Prof().setVisible(true);
-
-    }//GEN-LAST:event_jMenu1ActionPerformed
-
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
         // TODO add your handling code here:
-        new Consulta_Prof().setVisible(true);
+
     }//GEN-LAST:event_jMenu3ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void Consultar_AlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_AlunoActionPerformed
         // TODO add your handling code here:
-        new Consulta_Aluno().setVisible(true);
+        Consulta_Aluno objeto = Consulta_Aluno.getInstancia();
+        objeto.setVisible(true);
+        //new Consulta_Aluno().setVisible(true);
         
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_Consultar_AlunoActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void Consultar_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Consultar_ProfessorActionPerformed
+        // TODO add your handling code here: 
+        Consulta_Prof objeto = Consulta_Prof.getInstancia();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_Consultar_ProfessorActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        new Consulta_Prof().setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+        
+        new InserirAluno().setVisible(true);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,16 +182,20 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Consultar_Aluno;
+    private javax.swing.JMenuItem Consultar_Professor;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     // End of variables declaration//GEN-END:variables
 }
