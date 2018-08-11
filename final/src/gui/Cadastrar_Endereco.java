@@ -6,6 +6,7 @@
 package gui;
 
 import Model.Endereco;
+import dao.enderecoDAO;
 
 /**
  *
@@ -136,10 +137,9 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         Endereco endereco = new Endereco();
         endereco.setBairro(bairro.getText());
         endereco.setRua(rua.getText());
-        endereco.setNumero((Integer.parseInt(numero.getText());
-        
-        
-        endereco.setNumero(ERROR);
+        endereco.setNumero(Integer.parseInt(numero.getText()));
+        enderecoDAO ad = new enderecoDAO();
+       ad.create(endereco);
     }//GEN-LAST:event_cadastrarMouseClicked
 
     private void CancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelarMouseClicked

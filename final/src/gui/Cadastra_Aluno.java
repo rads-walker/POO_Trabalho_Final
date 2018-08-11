@@ -193,13 +193,12 @@ public class Cadastra_Aluno extends javax.swing.JFrame {
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked
         Aluno aluno = new Aluno();
        aluno.setNome(Nome.getText());
-       aluno.setMatricula(Integer.parseInt(turma.getText()));
        aluno.setTelefone(telefone.getText());
        aluno.setCpf(Integer.parseInt(cpf.getText()));
-       aluno.setEmail(endereco.getText());
+       aluno.setEmail(email.getText());
        aluno.setResponsavel_cpf(Integer.parseInt(cpf_resp.getText()));
        aluno.setTurma_idturma(Integer.parseInt(turma.getText()));
-       aluno.setEndereco_id(Integer.parseInt(email.getText()));
+       aluno.setEndereco_id(Integer.parseInt(endereco.getText()));
        alunoDAO ad = new alunoDAO();
        ad.create(aluno);
     }//GEN-LAST:event_cadastrarMouseClicked
