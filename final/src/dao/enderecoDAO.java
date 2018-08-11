@@ -28,7 +28,7 @@ public class enderecoDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO endereco (id, rua, numero, bairro) VALUES (?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO endereco (rua, numero, bairro) VALUES (?,?,?)");
            
             stmt.setInt(1, t.getId());
             stmt.setString(2, t.getRua());
