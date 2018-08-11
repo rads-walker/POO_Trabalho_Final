@@ -44,7 +44,8 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         bairro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de Endereço");
 
         jLabel3.setText("Numero:");
 
@@ -76,6 +77,8 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
                 CancelarActionPerformed(evt);
             }
         });
+
+        numero.setToolTipText("Numero");
 
         jLabel2.setText("Rua:");
 
@@ -131,6 +134,7 @@ public class Cadastrar_Endereco extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadastrarMouseClicked

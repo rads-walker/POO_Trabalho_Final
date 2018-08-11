@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Professor extends Pessoa{
     private ArrayList<Aula> aulas;
-    private Integer siap;
+    private String siap;
 
     public ArrayList<Aula> getAulas() {
         return aulas;
@@ -23,11 +23,11 @@ public class Professor extends Pessoa{
         this.aulas = aulas;
     }
 
-    public Integer getSiap() {
+    public String getSiap() {
         return siap;
     }
 
-    public void setSiap(Integer siap) {
+    public void setSiap(String siap) {
         this.siap = siap;
     }
 }

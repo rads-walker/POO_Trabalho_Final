@@ -30,10 +30,9 @@ public class enderecoDAO {
         try {
             stmt = con.prepareStatement("INSERT INTO endereco (rua, numero, bairro) VALUES (?,?,?)");
            
-            stmt.setInt(1, t.getId());
-            stmt.setString(2, t.getRua());
-            stmt.setInt(3, t.getNumero());
-            stmt.setString(4, t.getBairro());
+            stmt.setString(1, t.getRua());
+            stmt.setInt(2, t.getNumero());
+            stmt.setString(3, t.getBairro());
             System.out.println(stmt);
             stmt.executeUpdate();
             
