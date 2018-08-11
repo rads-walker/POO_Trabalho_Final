@@ -28,11 +28,12 @@ public class enderecoDAO {
         PreparedStatement stmt = null;
         
         try {
-            stmt = con.prepareStatement("INSERT INTO endereco (rua, numero, bairro) VALUES (?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO endereco (id, rua, numero, bairro) VALUES (?,?,?,?)");
            
-            stmt.setString(1, t.getRua());
-            stmt.setInt(2, t.getNumero());
-            stmt.setString(3, t.getBairro());
+            stmt.setInt(1, t.getId());
+            stmt.setString(2, t.getRua());
+            stmt.setInt(3, t.getNumero());
+            stmt.setString(4, t.getBairro());
             System.out.println(stmt);
             stmt.executeUpdate();
             
@@ -60,15 +61,12 @@ public class enderecoDAO {
             rs = stmt.executeQuery();
             
             while(rs.next()){
-                Endereco responsavel = new Endereco();              
-                responsavel.setNome(rs.getString("nome"));
-                responsavel.setCpf(rs.getInt("cpf"));
-                responsavel.setTelefone(rs.getString("telefone"));
-                responsavel.setEmail(rs.getString("email"));
-                responsavel.setEndereco_id(rs.getInt("endereco_id"));
-                System.out.println(responsavel.getNome());
-                responsaveis.add(responsavel);
-                
+                Endereco endereco = new Endereco();
+                endereco.setId(rs.getInt("id"));
+                endereco.setRua(rs.getString("rua"));
+                endereco.setNumero(rs.getInt("numero"));
+                endereco.setBairro(rs.getString("bairro"));
+                enderecos.add(endereco);                
             }
             
         } catch (SQLException ex) {
@@ -76,6 +74,6 @@ public class enderecoDAO {
         }finally{
             conecao.closeConnection(con, stmt, rs);
         }
-        return responsaveis;
+        return enderecos;
     }
 }

@@ -5,8 +5,12 @@
  */
 package APAGAR;
 
+import Model.Endereco;
 import Model.Responsavel;
+import dao.enderecoDAO;
 import dao.responsavelDAO;
+import java.util.HashSet;
+import java.util.Set;
 /**
  *
  * @author dell
@@ -37,9 +41,19 @@ public class Main {
                  p.setEmail("@gmail");
                  p.setTelefone("1147852369");
                  p.setEndereco_id(1);;
-                 pd.create(p);*/
+                 pd.create(p);
                  responsavelDAO pd = new responsavelDAO();
-                 pd.read(115288963);
+                 pd.read(115288963);*/
+
+                 Endereco p = new Endereco();
+                 enderecoDAO pd = new enderecoDAO();
+                 p.setId(3);
+                 p.setRua("J");
+                 p.setBairro("JOL");
+                 p.setNumero(25);
+                 pd.create(p);
+                 pd.read(3);
+        
                  
                  
 	 }	 

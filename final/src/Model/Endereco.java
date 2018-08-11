@@ -10,9 +10,18 @@ package Model;
  * @author ifnmg
  */
 public class Endereco {
+    private Integer id;
     private String rua;
     private Integer numero;
     private String bairro;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getRua() {
         return rua;

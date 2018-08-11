@@ -66,7 +66,6 @@ public class responsavelDAO {
                 responsavel.setTelefone(rs.getString("telefone"));
                 responsavel.setEmail(rs.getString("email"));
                 responsavel.setEndereco_id(rs.getInt("endereco_id"));
-                System.out.println(responsavel.getNome());
                 responsaveis.add(responsavel);
                 
             }
