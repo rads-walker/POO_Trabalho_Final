@@ -73,4 +73,29 @@ public class professorDAO {
         }
         return alunos;
     }
+     
+     public void create(Professor t){
+        
+        Connection con = conecao.getConnection();
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement("INSERT INTO professor (siap, cpf, nome, telefone, email, endereco_id) VALUES (?,?,?,?,?,?)");
+            stmt.setInt(1, t.getSiap());
+            stmt.setInt(2, t.getCpf());
+            stmt.setString(3, t.getNome());
+            stmt.setString(4, t.getTelefone());
+            stmt.setString(5, t.getEmail());
+            stmt.setInt(6, t.getEndereco_id());
+            System.out.println(stmt);
+            stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Salvo com successo!");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar!");
+        }finally{
+            conecao.closeConnection(con, stmt);
+        }
+    }
 }
