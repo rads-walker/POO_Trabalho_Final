@@ -1,3 +1,5 @@
+package gui;
+
 
 import dao.recepcionistaDAO;
 import javax.swing.JOptionPane;
@@ -12,6 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author Dionisio
  */
+
 public class Login extends javax.swing.JFrame {
 
     /**
@@ -35,7 +38,6 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         campo_usuario = new javax.swing.JTextField();
         campo_senha1 = new javax.swing.JPasswordField();
-        campo_senha2 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -60,8 +62,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        campo_senha1.setText("**************");
-
         jLabel3.setFont(new java.awt.Font("Norasi", 0, 15)); // NOI18N
 
         jLabel4.setText("Evoque Escolinha de Tênis");
@@ -81,14 +81,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campo_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(campo_senha2)
-                                    .addComponent(campo_senha1))
-                                .addGap(31, 31, 31)
-                                .addComponent(login))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(campo_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(campo_senha1)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(184, 184, 184)
                         .addComponent(jLabel3))
@@ -99,6 +94,10 @@ public class Login extends javax.swing.JFrame {
                         .addGap(176, 176, 176)
                         .addComponent(jLabel5)))
                 .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(login)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,17 +118,13 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(campo_senha1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(login))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campo_senha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(27, 27, 27))
+                .addGap(18, 18, 18)
+                .addComponent(login)
+                .addGap(28, 28, 28))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_usuarioActionPerformed
@@ -141,7 +136,9 @@ public class Login extends javax.swing.JFrame {
         recepcionistaDAO dao = new recepcionistaDAO();
            
        if(dao.checkLogin(campo_usuario.getText(), campo_senha1.getText())){
-           new Opcao().setVisible(true);
+            Menu frame = new Menu();
+            frame.setVisible(true);
+            
            this.dispose();
        }else{
            JOptionPane.showMessageDialog(null, "Credenciais incorretas!");
@@ -186,7 +183,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField campo_senha1;
-    private javax.swing.JTextField campo_senha2;
     private javax.swing.JTextField campo_usuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
