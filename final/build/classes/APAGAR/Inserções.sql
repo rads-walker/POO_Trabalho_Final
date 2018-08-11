@@ -21,3 +21,7 @@ ALTER TABLE aula
 ADD COLUMN horario date;
 UPDATE `tenis`.`aula` SET `horario`='2008-07-05' WHERE `idaulas`='0';
 UPDATE `tenis`.`aula` SET `horario`='2008-07-06' WHERE `idaulas`='1';
+
+
+INSERT INTO `tenis`.`aluno` (`matricula`, `cpf`, `nome`, `telefone`, `email`, `endereco_id`, `responsavel_cpf`, `turma_idturma`) VALUES ('0', '025', 'paulo', '12546', '#$', '0', '123', '0');
+INSERT INTO `tenis`.`responsavel` (`cpf`, `nome`, `telefone`, `email`, `endereco_id`) VALUES ('123', '123', '134', '435', '0');

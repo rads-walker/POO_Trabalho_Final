@@ -1,7 +1,7 @@
 package gui;
 
 import Model.Aula;
-import Model.Professor;
+import Model.Aluno;
 import dao.aulaDAO;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -19,12 +19,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ifnmg
  */
-public class Consulta_Prof extends javax.swing.JFrame {
+public class Consulta_Aluno extends javax.swing.JFrame {
 
     /**
      * Creates new form Opcao
      */
-    public Consulta_Prof() {
+    public Consulta_Aluno() {
         initComponents();
     }
 
@@ -39,29 +39,22 @@ public class Consulta_Prof extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         texto = new javax.swing.JTextField();
-        nome = new javax.swing.JRadioButton();
-        siap = new javax.swing.JRadioButton();
+        matricula = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabela = new javax.swing.JTable();
         Buscar = new java.awt.Button();
         CPF = new javax.swing.JRadioButton();
+        nome = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Consulta de Aulas - Professor");
+        setTitle("Consulta de Aulas - Aluno");
 
         jLabel1.setText("Busca:");
 
-        nome.setText("Nome");
-        nome.addActionListener(new java.awt.event.ActionListener() {
+        matricula.setText("Matricula");
+        matricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeActionPerformed(evt);
-            }
-        });
-
-        siap.setText("Siap");
-        siap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                siapActionPerformed(evt);
+                matriculaActionPerformed(evt);
             }
         });
 
@@ -101,31 +94,41 @@ public class Consulta_Prof extends javax.swing.JFrame {
             }
         });
 
+        nome.setText("Nome");
+        nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(nome)
-                        .addGap(18, 18, 18)
-                        .addComponent(siap)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(CPF)
-                        .addGap(273, 273, 273)))
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(nome)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(matricula)
+                                .addGap(43, 43, 43)
+                                .addComponent(CPF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,16 +140,14 @@ public class Consulta_Prof extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(siap)
-                        .addComponent(nome)
-                        .addComponent(CPF))
+                        .addComponent(matricula)
+                        .addComponent(CPF)
+                        .addComponent(nome))
                     .addComponent(Buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                 .addGap(30, 30, 30))
         );
-
-        Buscar.getAccessibleContext().setAccessibleDescription("");
 
         pack();
         setLocationRelativeTo(null);
@@ -160,7 +161,7 @@ public class Consulta_Prof extends javax.swing.JFrame {
         aulaDAO pdao = new aulaDAO();
         if(!(texto.getText().isEmpty())){
             if(nome.isSelected()){
-                for (Aula a : pdao.buscaNome(texto.getText())){          
+                for (Aula a : pdao.buscaAluno(texto.getText())){
                     modelo.addRow(new Object[]{
                     a.getHorario(),
                     a.getDuracao(),
@@ -169,7 +170,7 @@ public class Consulta_Prof extends javax.swing.JFrame {
                 }
             }
             else if(CPF.isSelected()){
-                for (Aula a : pdao.buscacpf(Integer.parseInt(texto.getText()))){          
+                for (Aula a : pdao.buscacpfaluno(Integer.parseInt(texto.getText()))){          
                     modelo.addRow(new Object[]{
                     a.getHorario(),
                     a.getDuracao(),
@@ -177,14 +178,14 @@ public class Consulta_Prof extends javax.swing.JFrame {
                     });
                 }   
             }
-            else if(siap.isSelected()){
-                for (Aula a : pdao.buscaSiap(texto.getText())){          
+            else if(matricula.isSelected()){
+                for (Aula a : pdao.buscamatricula(Integer.parseInt(texto.getText()))){          
                     modelo.addRow(new Object[]{
                     a.getHorario(),
                     a.getDuracao(),
                     a.getTurma_idturma()
                     });
-                }
+                }   
             }
             else{
                 JOptionPane.showMessageDialog(null, "Selecione um metodo de busca!");
@@ -192,7 +193,7 @@ public class Consulta_Prof extends javax.swing.JFrame {
         }else{
             nome.setSelected(false);
             CPF.setSelected(false);
-            siap.setSelected(false);
+            matricula.setSelected(false);
             for (Aula a : pdao.busca()){          
                 modelo.addRow(new Object[]{
                 a.getHorario(),
@@ -203,22 +204,22 @@ public class Consulta_Prof extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BuscarActionPerformed
 
-    private void siapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siapActionPerformed
+    private void matriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matriculaActionPerformed
         // TODO add your handling code here:
         nome.setSelected(false);
         CPF.setSelected(false);
-    }//GEN-LAST:event_siapActionPerformed
+    }//GEN-LAST:event_matriculaActionPerformed
 
     private void CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPFActionPerformed
         // TODO add your handling code here:
         nome.setSelected(false);
-        siap.setSelected(false);
+        matricula.setSelected(false);
     }//GEN-LAST:event_CPFActionPerformed
 
     private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         // TODO add your handling code here:
         CPF.setSelected(false);
-        siap.setSelected(false);
+        matricula.setSelected(false);
     }//GEN-LAST:event_nomeActionPerformed
 
     /**
@@ -238,14 +239,18 @@ public class Consulta_Prof extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Consulta_Prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Consulta_Prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Consulta_Prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Consulta_Prof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consulta_Aluno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -254,7 +259,7 @@ public class Consulta_Prof extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Consulta_Prof().setVisible(true);
+                new Consulta_Aluno().setVisible(true);
             }
         });
     }
@@ -265,8 +270,8 @@ public class Consulta_Prof extends javax.swing.JFrame {
     private javax.swing.JTable Tabela;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton matricula;
     private javax.swing.JRadioButton nome;
-    private javax.swing.JRadioButton siap;
     private javax.swing.JTextField texto;
     // End of variables declaration//GEN-END:variables
 }
