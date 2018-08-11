@@ -40,7 +40,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        Cadastrar_Professor = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
 
         jRadioButtonMenuItem1.setSelected(true);
@@ -91,8 +91,13 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem7.setText("Responsavel");
         jMenu2.add(jMenuItem7);
 
-        jMenuItem9.setText("Professor");
-        jMenu2.add(jMenuItem9);
+        Cadastrar_Professor.setText("Professor");
+        Cadastrar_Professor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cadastrar_ProfessorActionPerformed(evt);
+            }
+        });
+        jMenu2.add(Cadastrar_Professor);
 
         jMenuBar1.add(jMenu2);
 
@@ -146,6 +151,12 @@ public class Menu extends javax.swing.JFrame {
         new InserirAluno().setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
+    private void Cadastrar_ProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cadastrar_ProfessorActionPerformed
+        // TODO add your handling code here:
+        Cadastrar_Professor objeto = Cadastrar_Professor.getInstancia();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_Cadastrar_ProfessorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,6 +193,7 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Cadastrar_Professor;
     private javax.swing.JMenuItem Consultar_Aluno;
     private javax.swing.JMenuItem Consultar_Professor;
     private javax.swing.JMenu jMenu1;
@@ -194,7 +206,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
