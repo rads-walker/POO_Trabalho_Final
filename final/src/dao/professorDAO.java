@@ -28,7 +28,9 @@ public class professorDAO {
         Professor professor = new Professor();                      
         
         try {
-            stmt = con.prepareStatement("select * from professor where nome = ?");
+            stmt = con.prepareStatement("select horario,duracao,turma_idturma from professor,aula where professor.siap = aula.professor_siap\n" +
+"\n" +
+"");
             stmt.setInt(1, Busca);
             rs = stmt.executeQuery();
             professor.set
