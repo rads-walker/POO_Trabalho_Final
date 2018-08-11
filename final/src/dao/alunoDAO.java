@@ -19,6 +19,33 @@ import Model.Aluno;
  * @author Danilo
  */
 public class alunoDAO {
+    
+    public void create(Aluno t){
+        
+        Connection con = conecao.getConnection();
+        PreparedStatement stmt = null;
+        
+        try {
+            stmt = con.prepareStatement("INSERT INTO aluno (matricula, cpf, nome, telefone, email, endereco_id, responsavel_cpf, turma_idturma) VALUES (?,?,?,?,?,?,?,?)");
+            stmt.setInt(1, t.getMatricula());
+            stmt.setInt(2, t.getCpf());
+            stmt.setString(3, t.getNome());
+            stmt.setString(4, t.getTelefone());
+            stmt.setString(5, t.getEmail());
+            stmt.setInt(6, t.getEndereco_id());
+            stmt.setInt(7, t.getResponsavel_cpf());
+            stmt.setInt(8, t.getTurma_idturma());
+            System.out.println(stmt);
+            stmt.executeUpdate();
+            
+            JOptionPane.showMessageDialog(null, "Salvo com successo!");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar!");
+        }finally{
+            conecao.closeConnection(con, stmt);
+        }
+    }
         
     public List<Aluno> read(Integer Busca){
         Connection con = conecao.getConnection();
